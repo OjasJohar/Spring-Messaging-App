@@ -29,4 +29,10 @@ public class HelloRestController {
     public String sayHello(@RequestBody User user){
         return "Hello " + user.getFirstName() + " " + user.getLastName();
     }
+
+    //UC5
+    @PutMapping("/hello/param/{firstName}")
+    public String pathAndRequest(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName){
+        return "Hello "+ firstName + " " + lastName;
+    }
 }
